@@ -15,7 +15,7 @@ Feedback::Application.routes.draw do
   end
   resources :problem_reports
   
-  match '/simple_captcha(/:action)' => 'simple_captcha', :as => :simple_captcha
+  # match '/simple_captcha(/:action)' => 'simple_captcha', :as => :simple_captcha
  
   # -- 用户登录认证相关 --
   root :to => 'index#index'

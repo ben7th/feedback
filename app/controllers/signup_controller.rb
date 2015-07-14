@@ -9,6 +9,8 @@ class SignupController < ApplicationController
   
   # 创建
   def form_submit
+    params.permit!
+
     # 出于安全性考虑，新用户注册时销毁cookies令牌
     destroy_remember_me_cookie_token
     @user = User.new(params[:user])

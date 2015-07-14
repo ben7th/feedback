@@ -59,6 +59,8 @@ class ProblemReportsController < ApplicationController
   end
 
   def create
+    params.permit!
+
     @problem_report = _create_build_problem_report
 
     if !@problem_report.save

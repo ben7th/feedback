@@ -40,6 +40,8 @@ class ProblemTypesController < ApplicationController
   # POST /problem_types
   # POST /problem_types.json
   def create
+    params.permit!
+
     @problem_type = current_user.problem_types.build(params[:problem_type])
 
     respond_to do |format|

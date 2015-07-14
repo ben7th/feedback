@@ -1,6 +1,6 @@
 :javascript
   // 上传附件
-  jQuery('.multiple').live('click', function(){
+  jQuery('.multiple').on('click', function(){
     var current_name = $(this).attr("name");
 
     jQuery("#dropbox, .multiple").html5Uploader({
@@ -20,7 +20,7 @@
 = form_for @problem_report do |f|
   %p
     问题类型
-    = select ("problem_report", "problem_type_id", @problem_types.map {|u| [u.name,u.id]})
+    = select("problem_report", "problem_type_id", @problem_types.map {|u| [u.name,u.id]})
   %p
     %textarea{:id => "", :name => "problem_report[content]", :style => "width: 380px; height: 100px;"}
   
@@ -39,9 +39,9 @@
     #report-attachements{:style => "display: none;"}
     #dropbox
     %div{:id => "report-attachement-fields"}
-      %input.multiple{:multiple => "", :type => "file", :name => "attachement0[attachement]"}/
-      %input.multiple{:multiple => "", :type => "file", :name => "attachement1[attachement]"}/
-      %input.multiple{:multiple => "", :type => "file", :name => "attachement2[attachement]"}/
+      %input.multiple{:multiple => "", :type => "file", :name => "attachement0[attachement]"}
+      %input.multiple{:multiple => "", :type => "file", :name => "attachement1[attachement]"}
+      %input.multiple{:multiple => "", :type => "file", :name => "attachement2[attachement]"}
         
   .field
     %a.form-submit-button{:href=>'javascript:;'} 发送

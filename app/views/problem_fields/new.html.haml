@@ -1,16 +1,3 @@
-:javascript
-  // 删除表单
-  jQuery('a.delete').live('click', function(){
-    $(this).parent().remove();
-  })
-    
-  jQuery('#add-problem-field').live('click', function(){
-    var field = '<input type="text" name="problem_fields[]"  />';
-    var remove_button = '<a href="javascript:" class="delete">X</a>';
-    $('#problem-fields').append("<li>" + field + remove_button + "</li>");
-  })
-  
-
 %ul
   - unless @problem_fields.blank?
     - @problem_fields.each do |field|
@@ -32,3 +19,15 @@
     
   = f.submit "确定保存"
   
+:javascript
+  // 删除表单
+  jQuery('a.delete').on('click', function(){
+    $(this).parent().remove();
+  })
+    
+  jQuery('#add-problem-field').on('click', function(){
+    console.log(1)
+    var field = '<input type="text" name="problem_fields[]"  />';
+    var remove_button = '<a href="javascript:" class="delete">X</a>';
+    $('#problem-fields').append("<li>" + field + remove_button + "</li>");
+  })

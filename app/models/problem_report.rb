@@ -1,7 +1,7 @@
 require 'zip/zip'
 class ProblemReport < ActiveRecord::Base
   # 验证码
-  apply_simple_captcha :message => "验证码输入有误", :add_to_base => true
+  # apply_simple_captcha :message => "验证码输入有误", :add_to_base => true
   
   # --- 模型关联
   belongs_to :creator, :class_name => 'User', :foreign_key => :creator_id
